@@ -6,10 +6,24 @@
     <description>Recent content in Posts on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>adaptive lasso</title>
+      <link>/2018/12/30/adaptive-lasso/</link>
+      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/12/30/adaptive-lasso/</guid>
+      <description>The Adaptive Lasso and its oracle properties  简述基本想法 主要内容  introduction 统计模型学习有两个最基本的目标：保证好的预测准确性；筛选出相关的有预测价值的变量。特别是当真模型有稀疏表示时，变量选择尤为重要。确定有意义的预测变量，当然可以加强模型的预测表现。
+沿用Fan和Li(2001)的描述：我们考虑一下线性回归模型下，变量选择和模型估计的问题。假设$y = (y_1,y_2,\cdots,y_n)$为响应，$xj = (x{1j},x{2j},\cdots,x{nj}),j =1,2,\cdots,p$是线性无关的预测变量，设$X = [x_1,x_2,\cdots,xp]$为预测变量矩阵，不失一般性，我们假定数据是中心化的。假设真模型的参数集合$\mathcal{A} = {j:\beta^{*}{j} \ne 0 }$，且$|\mathcal{A}| = p_0 &amp;lt; p $，换言之，真模型中预测变量是已知所有预测变量的真子集。我们设通过估计过程$\delta$得到的参数估计为$\hat{\beta}(\delta)$，那么，我们称这个过程是一个Oracle procedure:
+ 能得到正确的子模型：${j:\hat{\beta}_{j} \ne 0}=\mathcal{A}$ 参数估计有：$\sqrt{n}(\hat{\beta}(\delta){\mathcal{A}} - \beta^{*}{\mathcal{A}})\stackrel{d}{\longrightarrow}N(0,\Sigma^{})$，其中$\Sigma^{}$真子模型的协方差矩阵。  一般的最小二乘估计(OLS)无法进行变量选择，于是，传统的做法是采用最优子集回归，但有两个明显缺陷：
+ 当预测变量个数很大时，选择最优子集计算上很难实现； 通常采用stepwise的方法，容易收敛到局部最优解。  Lasso是同时进行变量选择和模型估计的正则化技术。它的估计可以定义如下： $$ \hat{\beta}(lasso) = \arg \min{\beta}\parallel y-\sum{i=1}^{p}x_j \betaj\parallel+\lambda \sum{j=1}^{p}|\beta_j| $$ 其中$\lambda$为非负的正则化参数，第二项称为$l_1$penalty。关于lasso的估计是否是一个oracle procedure是一个重要问题。本文将给出这个问题的答案。特别的，我们感兴趣的是$l{1}$penalty是否可以成为一个oracle procedure，如果是，需要满足什么条件。我们考虑一个近似的设定，是关于$\lambda{n}$随n变化而变化的。首先我们说明，如果lasso的变量选择具有oracle性质，则设定的模型需要满足一个不平凡的假定，换言之，在某些情形下，lasso的变量选择没有oracle性质。
+the lasso variable selection could be inconsistent 首先，沿用Knight与Fu(2000)中的近似理论分析：
+ $y_i = xi \beta^{*} + \epsilon{i}$，其中$\epsilon_i$是独立同分布随机变量，均值为0，方差为$\sigma^2$。 $\frac{1}{n}X^{T}X \to C$，其中$C$为正定矩阵。 假设真参数集合$\mathcal{A} = {1,2,\cdots,p_0}$，令：  $$ C = \left[\begin{array}{cc} C{11} &amp;amp; C{12} C{21} &amp;amp; C{22} \end{array}\right] $$</description>
+    </item>
     
     <item>
       <title>first post</title>
